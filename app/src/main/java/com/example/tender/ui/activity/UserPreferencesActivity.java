@@ -196,8 +196,9 @@ public class UserPreferencesActivity extends AppCompatActivity implements EditDi
 
     private void navigateTo(Class<?> cls) {
         Intent intent = new Intent(UserPreferencesActivity.this, cls);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        finish();
+        //finishAndRemoveTask();
     }
 }
